@@ -1,18 +1,3 @@
-; keyword
-[
-    "PALETTE"
-    "BITMAP"
-    "TILESET"
-    "TILEMAP"
-    "MAP"
-    "OBJECTS"
-    "IMAGE"
-    "SPRITE"
-    "XGM"
-    "XGM2"
-    "WAV"
-    "BIN"
-    "ALIGN"
-    "UNGROUP"
-    "NEAR"
-] @keyword
+(bitmap_expression) @keyword
+(identifier) @variable
+(string_literal) @string
