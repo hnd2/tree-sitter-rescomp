@@ -1,5 +1,51 @@
 [
   {
+    "type": "align_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "integer_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bin_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "keyword_compression",
+          "named": true
+        },
+        {
+          "type": "keyword_far",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bitmap_expression",
     "named": true,
     "fields": {},
@@ -23,6 +69,77 @@
     }
   },
   {
+    "type": "image_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "keyword_compression",
+          "named": true
+        },
+        {
+          "type": "keyword_optimization",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "integer_array2d_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "integer_array_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "integer_array_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "integer_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyword_far",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "keyword_sprite_optimization_duplicate",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "map_expression",
     "named": true,
     "fields": {},
@@ -44,6 +161,29 @@
         },
         {
           "type": "keyword_ordering",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "objects_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "sortby_expression",
           "named": true
         },
         {
@@ -82,7 +222,19 @@
       "required": false,
       "types": [
         {
+          "type": "align_expression",
+          "named": true
+        },
+        {
+          "type": "bin_expression",
+          "named": true
+        },
+        {
           "type": "bitmap_expression",
+          "named": true
+        },
+        {
+          "type": "image_expression",
           "named": true
         },
         {
@@ -90,7 +242,19 @@
           "named": true
         },
         {
+          "type": "near_expression",
+          "named": true
+        },
+        {
+          "type": "objects_expression",
+          "named": true
+        },
+        {
           "type": "palette_expression",
+          "named": true
+        },
+        {
+          "type": "sprite_expression",
           "named": true
         },
         {
@@ -99,6 +263,92 @@
         },
         {
           "type": "tileset_expression",
+          "named": true
+        },
+        {
+          "type": "ungroup_expression",
+          "named": true
+        },
+        {
+          "type": "wav_expression",
+          "named": true
+        },
+        {
+          "type": "xgm2_expression",
+          "named": true
+        },
+        {
+          "type": "xgm_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sprite_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "keyword_collision",
+          "named": true
+        },
+        {
+          "type": "keyword_compression",
+          "named": true
+        },
+        {
+          "type": "keyword_sprite_optimization_duplicate",
+          "named": true
+        },
+        {
+          "type": "keyword_sprite_optimization_level",
+          "named": true
+        },
+        {
+          "type": "keyword_sprite_optimization_type",
+          "named": true
+        },
+        {
+          "type": "sprite_time_expression",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sprite_time_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "integer_array2d_literal",
+          "named": true
+        },
+        {
+          "type": "integer_array_literal",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
           "named": true
         }
       ]
@@ -180,7 +430,92 @@
     }
   },
   {
+    "type": "wav_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "keyword_far",
+          "named": true
+        },
+        {
+          "type": "keyword_wav_driver",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "xgm2_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "xgm_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword_xgm_timing",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "ALIGN",
+    "named": false
+  },
+  {
+    "type": "BIN",
     "named": false
   },
   {
@@ -188,11 +523,23 @@
     "named": false
   },
   {
+    "type": "IMAGE",
+    "named": false
+  },
+  {
     "type": "MAP",
     "named": false
   },
   {
+    "type": "OBJECTS",
+    "named": false
+  },
+  {
     "type": "PALETTE",
+    "named": false
+  },
+  {
+    "type": "SPRITE",
     "named": false
   },
   {
@@ -201,6 +548,26 @@
   },
   {
     "type": "TILESET",
+    "named": false
+  },
+  {
+    "type": "WAV",
+    "named": false
+  },
+  {
+    "type": "XGM",
+    "named": false
+  },
+  {
+    "type": "XGM2",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {
@@ -217,6 +584,10 @@
     "named": true
   },
   {
+    "type": "keyword_collision",
+    "named": true
+  },
+  {
     "type": "keyword_compression",
     "named": true
   },
@@ -230,6 +601,34 @@
   },
   {
     "type": "keyword_ordering",
+    "named": true
+  },
+  {
+    "type": "keyword_sprite_optimization_level",
+    "named": true
+  },
+  {
+    "type": "keyword_sprite_optimization_type",
+    "named": true
+  },
+  {
+    "type": "keyword_wav_driver",
+    "named": true
+  },
+  {
+    "type": "keyword_xgm_timing",
+    "named": true
+  },
+  {
+    "type": "near_expression",
+    "named": true
+  },
+  {
+    "type": "sortby_expression",
+    "named": true
+  },
+  {
+    "type": "ungroup_expression",
     "named": true
   }
 ]
