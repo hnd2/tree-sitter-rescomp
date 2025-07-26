@@ -8,9 +8,59 @@
       "required": true,
       "types": [
         {
-          "type": "bitmap_compression",
+          "type": "identifier",
           "named": true
         },
+        {
+          "type": "keyword_compression",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "map_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "keyword_compression",
+          "named": true
+        },
+        {
+          "type": "keyword_ordering",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "palette_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
         {
           "type": "identifier",
           "named": true
@@ -34,6 +84,22 @@
         {
           "type": "bitmap_expression",
           "named": true
+        },
+        {
+          "type": "map_expression",
+          "named": true
+        },
+        {
+          "type": "palette_expression",
+          "named": true
+        },
+        {
+          "type": "tilemap_expression",
+          "named": true
+        },
+        {
+          "type": "tileset_expression",
+          "named": true
         }
       ]
     }
@@ -44,6 +110,76 @@
     "fields": {}
   },
   {
+    "type": "tilemap_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "keyword_compression",
+          "named": true
+        },
+        {
+          "type": "keyword_optimization",
+          "named": true
+        },
+        {
+          "type": "keyword_ordering",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tileset_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword_compression",
+          "named": true
+        },
+        {
+          "type": "keyword_export",
+          "named": true
+        },
+        {
+          "type": "keyword_optimization",
+          "named": true
+        },
+        {
+          "type": "keyword_ordering",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -52,11 +188,43 @@
     "named": false
   },
   {
-    "type": "bitmap_compression",
-    "named": true
+    "type": "MAP",
+    "named": false
+  },
+  {
+    "type": "PALETTE",
+    "named": false
+  },
+  {
+    "type": "TILEMAP",
+    "named": false
+  },
+  {
+    "type": "TILESET",
+    "named": false
   },
   {
     "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "integer_literal",
+    "named": true
+  },
+  {
+    "type": "keyword_compression",
+    "named": true
+  },
+  {
+    "type": "keyword_export",
+    "named": true
+  },
+  {
+    "type": "keyword_optimization",
+    "named": true
+  },
+  {
+    "type": "keyword_ordering",
     "named": true
   }
 ]
