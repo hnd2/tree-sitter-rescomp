@@ -9,8 +9,10 @@
 
 module.exports = grammar({
   name: "rescomp",
+  extras: ($) => [$.comment, /\s/],
   rules: {
     source_file: ($) => repeat($._statement),
+    comment: (_) => token(choice(seq("#", /[^\r\n]*/), seq("//", /[^\r\n]*/))),
     _statement: ($) =>
       choice(
         $.palette_expression,
@@ -19,10 +21,9 @@ module.exports = grammar({
         $.tilemap_expression,
         $.map_expression,
       ),
-    identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_]*/,
+    identifier: (_) => token(/[a-zA-Z_][a-zA-Z0-9_]*/),
     string_literal: (_) => seq('"', repeat(choice(/[^"\\]/, /\\./)), '"'),
     integer_literal: (_) => token(choice(/[1-9][0-9_]*/, /0/)),
-    comment: (_) => token(choice(seq("#", /[^\r\n]*/), seq("//", /[^\r\n]*/))),
 
     // keyword
     keyword_compression: ($) =>

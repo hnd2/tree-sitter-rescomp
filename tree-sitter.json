@@ -6,11 +6,10 @@
       "camelcase": "Rescomp",
       "title": "Rescomp",
       "scope": "source.rescomp",
-      "file-types": [
-        "res"
-      ],
+      "file-types": ["res"],
       "injection-regex": "^rescomp$",
-      "class-name": "TreeSitterRescomp"
+      "class-name": "TreeSitterRescomp",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
