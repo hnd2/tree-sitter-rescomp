@@ -255,6 +255,111 @@
         }
       ]
     },
+    "keyword_palette": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "PALETTE"
+      }
+    },
+    "keyword_bitmap": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "BITMAP"
+      }
+    },
+    "keyword_tileset": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "TILESET"
+      }
+    },
+    "keyword_tilemap": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "TILEMAP"
+      }
+    },
+    "keyword_map": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "MAP"
+      }
+    },
+    "keyword_objects": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "OBJECTS"
+      }
+    },
+    "keyword_image": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "IMAGE"
+      }
+    },
+    "keyword_sprite": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "SPRITE"
+      }
+    },
+    "keyword_xgm": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "XGM"
+      }
+    },
+    "keyword_xgm2": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "XGM2"
+      }
+    },
+    "keyword_wav": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "WAV"
+      }
+    },
+    "keyword_bin": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "BIN"
+      }
+    },
+    "keyword_align": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "ALIGN"
+      }
+    },
+    "keyword_ungroup": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "UNGROUP"
+      }
+    },
+    "keyword_near": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "NEAR"
+      }
+    },
     "keyword_compression": {
       "type": "TOKEN",
       "content": {
@@ -391,6 +496,22 @@
           {
             "type": "STRING",
             "value": "NONE"
+          }
+        ]
+      }
+    },
+    "keyword_far": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "FALSE"
+          },
+          {
+            "type": "STRING",
+            "value": "TRUE"
           }
         ]
       }
@@ -555,28 +676,12 @@
         ]
       }
     },
-    "keyword_far": {
-      "type": "TOKEN",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "FALSE"
-          },
-          {
-            "type": "STRING",
-            "value": "TRUE"
-          }
-        ]
-      }
-    },
     "palette_expression": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "PALETTE"
+          "type": "SYMBOL",
+          "name": "keyword_palette"
         },
         {
           "type": "SYMBOL",
@@ -592,8 +697,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "BITMAP"
+          "type": "SYMBOL",
+          "name": "keyword_bitmap"
         },
         {
           "type": "SYMBOL",
@@ -621,8 +726,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "TILESET"
+          "type": "SYMBOL",
+          "name": "keyword_tileset"
         },
         {
           "type": "SYMBOL",
@@ -704,8 +809,8 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "TILEMAP"
+              "type": "SYMBOL",
+              "name": "keyword_tilemap"
             },
             {
               "type": "SYMBOL",
@@ -788,8 +893,8 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "TILEMAP"
+              "type": "SYMBOL",
+              "name": "keyword_tilemap"
             },
             {
               "type": "SYMBOL",
@@ -860,8 +965,8 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "MAP"
+              "type": "SYMBOL",
+              "name": "keyword_map"
             },
             {
               "type": "SYMBOL",
@@ -910,8 +1015,8 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "MAP"
+              "type": "SYMBOL",
+              "name": "keyword_map"
             },
             {
               "type": "SYMBOL",
@@ -996,8 +1101,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "OBJECTS"
+          "type": "SYMBOL",
+          "name": "keyword_objects"
         },
         {
           "type": "SYMBOL",
@@ -1062,8 +1167,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "IMAGE"
+          "type": "SYMBOL",
+          "name": "keyword_image"
         },
         {
           "type": "SYMBOL",
@@ -1125,8 +1230,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "SPRITE"
+          "type": "SYMBOL",
+          "name": "keyword_sprite"
         },
         {
           "type": "SYMBOL",
@@ -1247,8 +1352,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "XGM"
+          "type": "SYMBOL",
+          "name": "keyword_xgm"
         },
         {
           "type": "SYMBOL",
@@ -1293,8 +1398,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "XGM2"
+          "type": "SYMBOL",
+          "name": "keyword_xgm2"
         },
         {
           "type": "SYMBOL",
@@ -1313,8 +1418,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "WAV"
+          "type": "SYMBOL",
+          "name": "keyword_wav"
         },
         {
           "type": "SYMBOL",
@@ -1363,8 +1468,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "BIN"
+          "type": "SYMBOL",
+          "name": "keyword_bin"
         },
         {
           "type": "SYMBOL",
@@ -1460,8 +1565,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "ALIGN"
+          "type": "SYMBOL",
+          "name": "keyword_align"
         },
         {
           "type": "CHOICE",
@@ -1478,12 +1583,12 @@
       ]
     },
     "ungroup_expression": {
-      "type": "STRING",
-      "value": "UNGROUP"
+      "type": "SYMBOL",
+      "name": "keyword_ungroup"
     },
     "near_expression": {
-      "type": "STRING",
-      "value": "NEAR"
+      "type": "SYMBOL",
+      "name": "keyword_near"
     }
   },
   "extras": [

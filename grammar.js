@@ -46,6 +46,21 @@ module.exports = grammar({
       ),
 
     // keyword
+    keyword_palette: () => token("PALETTE"),
+    keyword_bitmap: () => token("BITMAP"),
+    keyword_tileset: () => token("TILESET"),
+    keyword_tilemap: () => token("TILEMAP"),
+    keyword_map: () => token("MAP"),
+    keyword_objects: () => token("OBJECTS"),
+    keyword_image: () => token("IMAGE"),
+    keyword_sprite: () => token("SPRITE"),
+    keyword_xgm: () => token("XGM"),
+    keyword_xgm2: () => token("XGM2"),
+    keyword_wav: () => token("WAV"),
+    keyword_bin: () => token("BIN"),
+    keyword_align: () => token("ALIGN"),
+    keyword_ungroup: () => token("UNGROUP"),
+    keyword_near: () => token("NEAR"),
     keyword_compression: ($) =>
       token(
         choice(
@@ -66,6 +81,7 @@ module.exports = grammar({
     keyword_ordering: ($) => token(choice("ROW", "COLUMN")),
     keyword_export: ($) => token(choice("0", "1", "FALSE", "TRUE")),
     keyword_collision: ($) => token(choice("CIRCLE", "BOX", "NONE")),
+    keyword_far: ($) => token(choice("FALSE", "TRUE")),
     keyword_sprite_optimization_type: ($) =>
       token(choice("0", "1", "2", "3", "BALANCED", "SPRITE", "TILE", "NONE")),
     keyword_sprite_optimization_level: ($) =>
@@ -76,12 +92,11 @@ module.exports = grammar({
       token(choice("-1", "0", "1", "AUTO", "NTSC", "PAL")),
     keyword_wav_driver: ($) =>
       token(choice("DEFAULT", "PCM", "DPCM2", "PCM4", "XGM", "XGM2")),
-    keyword_far: ($) => token(choice("FALSE", "TRUE")),
 
     // PALETTE
     palette_expression: ($) =>
       seq(
-        "PALETTE",
+        $.keyword_palette,
         $.identifier, // name
         $.string_literal, // file
       ),
@@ -89,7 +104,7 @@ module.exports = grammar({
     // BITMAP
     bitmap_expression: ($) =>
       seq(
-        "BITMAP",
+        $.keyword_bitmap,
         $.identifier, // name
         $.string_literal, // img_file
         optional($.keyword_compression), // compression
@@ -98,7 +113,7 @@ module.exports = grammar({
     // TILESET
     tileset_expression: ($) =>
       seq(
-        "TILESET",
+        $.keyword_tileset,
         $.identifier, // name
         $.string_literal, // file
         optional(
@@ -123,7 +138,7 @@ module.exports = grammar({
     tilemap_expression: ($) =>
       choice(
         seq(
-          "TILEMAP",
+          $.keyword_tilemap,
           $.identifier, // name
           $.string_literal, // img_file
           $.string_literal, // tileset_id
@@ -145,7 +160,7 @@ module.exports = grammar({
           ),
         ),
         seq(
-          "TILEMAP",
+          $.keyword_tilemap,
           $.identifier, // name
           $.string_literal, // tmx_file
           $.string_literal, // layer_id
@@ -167,7 +182,7 @@ module.exports = grammar({
     map_expression: ($) =>
       choice(
         seq(
-          "MAP",
+          $.keyword_map,
           $.identifier, // name
           $.string_literal, // img_file
           $.string_literal, // tileset_id
@@ -179,7 +194,7 @@ module.exports = grammar({
           ),
         ),
         seq(
-          "MAP",
+          $.keyword_map,
           $.identifier, // name
           $.string_literal, // tmx_file
           $.string_literal, // layer_id
@@ -205,7 +220,7 @@ module.exports = grammar({
     // OBJECTS
     objects_expression: ($) =>
       seq(
-        "OBJECTS",
+        $.keyword_objects,
         $.identifier, // name
         $.string_literal, // tmx_file
         $.string_literal, // layer_id
@@ -222,7 +237,7 @@ module.exports = grammar({
     // IMAGE
     image_expression: ($) =>
       seq(
-        "IMAGE",
+        $.keyword_image,
         $.identifier, // name
         $.string_literal, // img_file
         optional(
@@ -241,7 +256,7 @@ module.exports = grammar({
     // SPRITE
     sprite_expression: ($) =>
       seq(
-        "SPRITE",
+        $.keyword_sprite,
         $.identifier, // name
         $.string_literal, // img_file
         $.integer_literal, // width
@@ -277,7 +292,7 @@ module.exports = grammar({
     // XGM
     xgm_expression: ($) =>
       seq(
-        "XGM",
+        $.keyword_xgm,
         $.identifier, // name
         $.string_literal, // file
         optional(
@@ -291,7 +306,7 @@ module.exports = grammar({
     // XGM2
     xgm2_expression: ($) =>
       seq(
-        "XGM2",
+        $.keyword_xgm2,
         $.identifier, // name
         repeat1($.string_literal), // file(s)
         // optional($.string_literal), // options
@@ -300,7 +315,7 @@ module.exports = grammar({
     // WAV
     wav_expression: ($) =>
       seq(
-        "WAV",
+        $.keyword_wav,
         $.identifier, // name
         $.string_literal, // wav_file
         $.keyword_wav_driver, // driver
@@ -315,7 +330,7 @@ module.exports = grammar({
     // BIN
     bin_expression: ($) =>
       seq(
-        "BIN",
+        $.keyword_bin,
         $.identifier, // name
         $.string_literal, // file
         optional(
@@ -344,15 +359,15 @@ module.exports = grammar({
     // ALIGN
     align_expression: ($) =>
       seq(
-        "ALIGN",
+        $.keyword_align,
         optional($.integer_literal), // value
       ),
 
     // UNGROUP
-    ungroup_expression: ($) => "UNGROUP",
+    ungroup_expression: ($) => $.keyword_ungroup,
 
     // NEAR
-    near_expression: ($) => "NEAR",
+    near_expression: ($) => $.keyword_near,
   },
 });
 

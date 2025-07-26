@@ -4,11 +4,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "keyword_align",
           "named": true
         }
       ]
@@ -28,6 +32,10 @@
         },
         {
           "type": "integer_literal",
+          "named": true
+        },
+        {
+          "type": "keyword_bin",
           "named": true
         },
         {
@@ -55,6 +63,10 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword_bitmap",
           "named": true
         },
         {
@@ -86,6 +98,10 @@
         },
         {
           "type": "keyword_compression",
+          "named": true
+        },
+        {
+          "type": "keyword_image",
           "named": true
         },
         {
@@ -160,11 +176,30 @@
           "named": true
         },
         {
+          "type": "keyword_map",
+          "named": true
+        },
+        {
           "type": "keyword_ordering",
           "named": true
         },
         {
           "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "near_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword_near",
           "named": true
         }
       ]
@@ -180,6 +215,10 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword_objects",
           "named": true
         },
         {
@@ -203,6 +242,10 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword_palette",
           "named": true
         },
         {
@@ -309,6 +352,10 @@
           "named": true
         },
         {
+          "type": "keyword_sprite",
+          "named": true
+        },
+        {
           "type": "keyword_sprite_optimization_duplicate",
           "named": true
         },
@@ -388,6 +435,10 @@
           "named": true
         },
         {
+          "type": "keyword_tilemap",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         }
@@ -423,7 +474,26 @@
           "named": true
         },
         {
+          "type": "keyword_tileset",
+          "named": true
+        },
+        {
           "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ungroup_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword_ungroup",
           "named": true
         }
       ]
@@ -450,6 +520,10 @@
           "named": true
         },
         {
+          "type": "keyword_wav",
+          "named": true
+        },
+        {
           "type": "keyword_wav_driver",
           "named": true
         },
@@ -473,6 +547,10 @@
           "named": true
         },
         {
+          "type": "keyword_xgm2",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         }
@@ -492,6 +570,10 @@
           "named": true
         },
         {
+          "type": "keyword_xgm",
+          "named": true
+        },
+        {
           "type": "keyword_xgm_timing",
           "named": true
         },
@@ -508,58 +590,6 @@
   },
   {
     "type": ",",
-    "named": false
-  },
-  {
-    "type": "ALIGN",
-    "named": false
-  },
-  {
-    "type": "BIN",
-    "named": false
-  },
-  {
-    "type": "BITMAP",
-    "named": false
-  },
-  {
-    "type": "IMAGE",
-    "named": false
-  },
-  {
-    "type": "MAP",
-    "named": false
-  },
-  {
-    "type": "OBJECTS",
-    "named": false
-  },
-  {
-    "type": "PALETTE",
-    "named": false
-  },
-  {
-    "type": "SPRITE",
-    "named": false
-  },
-  {
-    "type": "TILEMAP",
-    "named": false
-  },
-  {
-    "type": "TILESET",
-    "named": false
-  },
-  {
-    "type": "WAV",
-    "named": false
-  },
-  {
-    "type": "XGM",
-    "named": false
-  },
-  {
-    "type": "XGM2",
     "named": false
   },
   {
@@ -584,6 +614,18 @@
     "named": true
   },
   {
+    "type": "keyword_align",
+    "named": true
+  },
+  {
+    "type": "keyword_bin",
+    "named": true
+  },
+  {
+    "type": "keyword_bitmap",
+    "named": true
+  },
+  {
     "type": "keyword_collision",
     "named": true
   },
@@ -596,11 +638,35 @@
     "named": true
   },
   {
+    "type": "keyword_image",
+    "named": true
+  },
+  {
+    "type": "keyword_map",
+    "named": true
+  },
+  {
+    "type": "keyword_near",
+    "named": true
+  },
+  {
+    "type": "keyword_objects",
+    "named": true
+  },
+  {
     "type": "keyword_optimization",
     "named": true
   },
   {
     "type": "keyword_ordering",
+    "named": true
+  },
+  {
+    "type": "keyword_palette",
+    "named": true
+  },
+  {
+    "type": "keyword_sprite",
     "named": true
   },
   {
@@ -612,7 +678,31 @@
     "named": true
   },
   {
+    "type": "keyword_tilemap",
+    "named": true
+  },
+  {
+    "type": "keyword_tileset",
+    "named": true
+  },
+  {
+    "type": "keyword_ungroup",
+    "named": true
+  },
+  {
+    "type": "keyword_wav",
+    "named": true
+  },
+  {
     "type": "keyword_wav_driver",
+    "named": true
+  },
+  {
+    "type": "keyword_xgm",
+    "named": true
+  },
+  {
+    "type": "keyword_xgm2",
     "named": true
   },
   {
@@ -620,15 +710,7 @@
     "named": true
   },
   {
-    "type": "near_expression",
-    "named": true
-  },
-  {
     "type": "sortby_expression",
-    "named": true
-  },
-  {
-    "type": "ungroup_expression",
     "named": true
   }
 ]

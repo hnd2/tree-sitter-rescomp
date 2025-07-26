@@ -11,21 +11,21 @@
 ] @punctuation.bracket
 
 [
-  "PALETTE"
-  "BITMAP"
-  "TILESET"
-  "TILEMAP"
-  "MAP"
-  "OBJECTS"
-  "IMAGE"
-  "SPRITE"
-  "XGM"
-  "XGM2"
-  "WAV"
-  "BIN"
-  "ALIGN"
-  "UNGROUP"
-  "NEAR"
+  (keyword_palette)
+  (keyword_bitmap)
+  (keyword_tileset)
+  (keyword_tilemap)
+  (keyword_map)
+  (keyword_objects)
+  (keyword_image)
+  (keyword_sprite)
+  (keyword_xgm)
+  (keyword_xgm2)
+  (keyword_wav)
+  (keyword_bin)
+  (keyword_align)
+  (keyword_ungroup)
+  (keyword_near)
 ] @function.builtin
 [
   (keyword_compression)
@@ -33,12 +33,12 @@
   (keyword_ordering)
   (keyword_export)
   (keyword_collision)
+  (keyword_far)
   (keyword_sprite_optimization_type)
   (keyword_sprite_optimization_level)
   (keyword_sprite_optimization_duplicate)
   (keyword_xgm_timing)
   (keyword_wav_driver)
-  (keyword_wav_far)
 ] @constant.builtin
 
 (source_file) @none
