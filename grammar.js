@@ -37,6 +37,8 @@ module.exports = grammar({
     integer_array_literal: ($) => seq("[", commaSep1($.integer_literal), "]"),
     integer_array2d_literal: ($) =>
       seq("[", repeat1($.integer_array_literal), "]"),
+    sprite_size_literal: ($) =>
+      seq($.integer_literal, optional(choice("p", "P", "f", "F"))),
     sortby_expression: (_) => token(seq('"sortby:', /[^"\\]+/, '"')),
     sprite_time_expression: ($) =>
       choice(

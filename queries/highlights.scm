@@ -4,7 +4,10 @@
 
 (string_literal) @string
 (sortby_expression) @string
-(integer_literal) @number
+[
+  (integer_literal)
+  (sprite_size_literal)
+] @number
 [
     "["
     "]"
