@@ -14,7 +14,7 @@ module.exports = grammar({
   rules: {
     source_file: ($) => repeat($._statement),
     comment: (_) => token(choice(seq("#", /[^\r\n]*/), seq("//", /[^\r\n]*/))),
-    newline: (_) => /\r?\n/,
+    _newline: (_) => /\r?\n/,
     _statement: ($) =>
       seq(
         choice(
@@ -34,7 +34,7 @@ module.exports = grammar({
           $.ungroup_statement,
           $.near_statement,
         ),
-        $.newline,
+        $._newline,
       ),
     identifier: (_) => token(/[a-zA-Z_][a-zA-Z0-9_]*/),
     string_literal: (_) => seq('"', repeat(choice(/[^"\\]/, /\\./)), '"'),
@@ -266,8 +266,8 @@ module.exports = grammar({
         $.keyword_sprite,
         field("name", $.identifier),
         field("img_file", $.string_literal),
-        field("width", $.integer_literal),
-        field("height", $.integer_literal),
+        field("width", $.sprite_size_literal),
+        field("height", $.sprite_size_literal),
         optional(
           seq(
             field("compression", $.keyword_compression),

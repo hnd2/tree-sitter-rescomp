@@ -43,7 +43,7 @@
         ]
       }
     },
-    "newline": {
+    "_newline": {
       "type": "PATTERN",
       "value": "\\r?\\n"
     },
@@ -117,7 +117,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "newline"
+          "name": "_newline"
         }
       ]
     },
@@ -1497,7 +1497,7 @@
           "name": "width",
           "content": {
             "type": "SYMBOL",
-            "name": "integer_literal"
+            "name": "sprite_size_literal"
           }
         },
         {
@@ -1505,7 +1505,7 @@
           "name": "height",
           "content": {
             "type": "SYMBOL",
-            "name": "integer_literal"
+            "name": "sprite_size_literal"
           }
         },
         {
