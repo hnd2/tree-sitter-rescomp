@@ -97,35 +97,35 @@ module.exports = grammar({
     palette_statement: ($) =>
       seq(
         $.keyword_palette,
-        $.identifier, // name
-        $.string_literal, // file
+        field("name", $.identifier),
+        field("file", $.string_literal),
       ),
 
     // BITMAP
     bitmap_statement: ($) =>
       seq(
         $.keyword_bitmap,
-        $.identifier, // name
-        $.string_literal, // img_file
-        optional($.keyword_compression), // compression
+        field("name", $.identifier),
+        field("img_file", $.string_literal),
+        field("compression", optional($.keyword_compression)),
       ),
 
     // TILESET
     tileset_statement: ($) =>
       seq(
         $.keyword_tileset,
-        $.identifier, // name
-        $.string_literal, // file
+        field("name", $.identifier),
+        field("file", $.string_literal), // file
         optional(
           seq(
-            $.keyword_compression, // compression
+            field("compression", $.keyword_compression),
             optional(
               seq(
-                $.keyword_optimization, // opt
+                field("opt", $.keyword_optimization),
                 optional(
                   seq(
-                    $.keyword_ordering, // ordering
-                    optional($.keyword_export), // export
+                    field("ordering", $.keyword_ordering),
+                    optional(field("export", $.keyword_export)),
                   ),
                 ),
               ),
@@ -139,19 +139,19 @@ module.exports = grammar({
       choice(
         seq(
           $.keyword_tilemap,
-          $.identifier, // name
-          $.string_literal, // img_file
-          $.string_literal, // tileset_id
+          field("name", $.identifier),
+          field("img_file", $.string_literal),
+          field("tileset_id", $.string_literal),
           optional(
             seq(
-              $.keyword_compression, // compression
+              field("compression", $.keyword_compression),
               optional(
                 seq(
-                  $.keyword_optimization, // map_opt
+                  field("map_opt", $.keyword_optimization),
                   optional(
                     seq(
-                      $.integer_literal, //map_base
-                      optional($.keyword_ordering), //ordering
+                      field("map_base", $.integer_literal),
+                      optional(field("ordering", $.keyword_ordering)),
                     ),
                   ),
                 ),
@@ -161,16 +161,16 @@ module.exports = grammar({
         ),
         seq(
           $.keyword_tilemap,
-          $.identifier, // name
-          $.string_literal, // tmx_file
-          $.string_literal, // layer_id
+          field("name", $.identifier),
+          field("tmx_file", $.string_literal),
+          field("layer_id", $.string_literal),
           optional(
             seq(
-              $.keyword_compression, // ts_compression
+              field("ts_compression", $.keyword_compression),
               optional(
                 seq(
-                  $.keyword_compression, // map_compression
-                  optional($.integer_literal), // map_base
+                  field("map_compression", $.keyword_compression),
+                  optional(field("map_base", $.integer_literal)),
                 ),
               ),
             ),
@@ -183,31 +183,31 @@ module.exports = grammar({
       choice(
         seq(
           $.keyword_map,
-          $.identifier, // name
-          $.string_literal, // img_file
-          $.string_literal, // tileset_id
+          field("name", $.identifier),
+          field("img_file", $.string_literal),
+          field("tileset_id", $.string_literal),
           optional(
             seq(
-              $.keyword_compression, // compression
-              optional($.integer_literal), // map_base
+              field("compression", $.keyword_compression),
+              optional(field("map_base", $.integer_literal)),
             ),
           ),
         ),
         seq(
           $.keyword_map,
-          $.identifier, // name
-          $.string_literal, // tmx_file
-          $.string_literal, // layer_id
+          field("name", $.identifier),
+          field("tmx_file", $.string_literal),
+          field("layer_id", $.string_literal),
           optional(
             seq(
-              $.keyword_compression, // ts_compression
+              field("ts_compression", $.keyword_compression),
               optional(
                 seq(
-                  $.keyword_compression, // map_compression
+                  field("map_compression", $.keyword_compression),
                   optional(
                     seq(
-                      $.integer_literal, // map_base
-                      optional($.keyword_ordering), // ordering
+                      field("map_base", $.integer_literal),
+                      optional(field("ordering", $.keyword_ordering)),
                     ),
                   ),
                 ),
@@ -221,15 +221,15 @@ module.exports = grammar({
     objects_statement: ($) =>
       seq(
         $.keyword_objects,
-        $.identifier, // name
-        $.string_literal, // tmx_file
-        $.string_literal, // layer_id
-        $.string_literal, // field_defs
-        optional($.sortby_expression), // sortby
+        field("name", $.identifier),
+        field("tmx_file", $.string_literal),
+        field("layer_id", $.string_literal),
+        field("field_defs", $.string_literal),
+        optional(field("sortby", $.sortby_expression)),
         optional(
           seq(
-            $.string_literal, // decl_type
-            optional($.string_literal), // type_filter
+            field("decl_type", $.string_literal),
+            optional(field("type_filter", $.string_literal)),
           ),
         ),
       ),
@@ -238,15 +238,15 @@ module.exports = grammar({
     image_statement: ($) =>
       seq(
         $.keyword_image,
-        $.identifier, // name
-        $.string_literal, // img_file
+        field("name", $.identifier),
+        field("img_file", $.string_literal),
         optional(
           seq(
-            $.keyword_compression, // compression
+            field("compression", $.keyword_compression),
             optional(
               seq(
-                $.keyword_optimization, // map_opt
-                optional($.integer_literal), // map_base
+                field("map_opt", $.keyword_optimization),
+                optional(field("map_base", $.integer_literal)),
               ),
             ),
           ),
@@ -257,26 +257,34 @@ module.exports = grammar({
     sprite_statement: ($) =>
       seq(
         $.keyword_sprite,
-        $.identifier, // name
-        $.string_literal, // img_file
-        $.integer_literal, // width
-        $.integer_literal, // height
+        field("name", $.identifier),
+        field("img_file", $.string_literal),
+        field("width", $.integer_literal),
+        field("height", $.integer_literal),
         optional(
           seq(
-            $.keyword_compression, // compression
+            field("compression", $.keyword_compression),
             optional(
               seq(
-                $.sprite_time_expression, // time
+                field("time", $.sprite_time_expression),
                 optional(
                   seq(
-                    $.keyword_collision, // collision
+                    field("collision", $.keyword_collision),
                     optional(
                       seq(
-                        $.keyword_sprite_optimization_type, // opt_type
+                        field("opt_type", $.keyword_sprite_optimization_type),
                         optional(
                           seq(
-                            $.keyword_sprite_optimization_level, // opt_level
-                            optional($.keyword_sprite_optimization_duplicate), // opt_duplicate
+                            field(
+                              "opt_level",
+                              $.keyword_sprite_optimization_level,
+                            ),
+                            optional(
+                              field(
+                                "opt_duplicate",
+                                $.keyword_sprite_optimization_duplicate,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -293,12 +301,12 @@ module.exports = grammar({
     xgm_statement: ($) =>
       seq(
         $.keyword_xgm,
-        $.identifier, // name
-        $.string_literal, // file
+        field("name", $.identifier),
+        field("file", $.string_literal),
         optional(
           seq(
-            $.keyword_xgm_timing, // timing
-            optional($.string_literal), // options
+            field("timing", $.keyword_xgm_timing),
+            optional(field("options", $.string_literal)),
           ),
         ),
       ),
@@ -307,22 +315,22 @@ module.exports = grammar({
     xgm2_statement: ($) =>
       seq(
         $.keyword_xgm2,
-        $.identifier, // name
-        repeat1($.string_literal), // file(s)
-        // optional($.string_literal), // options
+        field("name", $.identifier),
+        repeat1(field("file", $.string_literal)),
+        // optional(field("options", $.string_literal)),
       ),
 
     // WAV
     wav_statement: ($) =>
       seq(
         $.keyword_wav,
-        $.identifier, // name
-        $.string_literal, // wav_file
-        $.keyword_wav_driver, // driver
+        field("name", $.identifier),
+        field("wav_file", $.string_literal),
+        field("driver", $.keyword_wav_driver),
         optional(
           seq(
-            $.integer_literal, // out_rate
-            optional($.keyword_far), // far
+            field("out_rate", $.integer_literal),
+            optional(field("far", $.keyword_far)),
           ),
         ),
       ),
@@ -331,21 +339,21 @@ module.exports = grammar({
     bin_statement: ($) =>
       seq(
         $.keyword_bin,
-        $.identifier, // name
-        $.string_literal, // file
+        field("name", $.identifier),
+        field("file", $.string_literal),
         optional(
           seq(
-            $.integer_literal, // align
+            field("align", $.integer_literal),
             optional(
               seq(
-                $.integer_literal, // size_align
+                field("size_align", $.integer_literal),
                 optional(
                   seq(
-                    $.integer_literal, // fill
+                    field("fill", $.integer_literal),
                     optional(
                       seq(
-                        $.keyword_compression, // compression
-                        optional($.keyword_far), // far
+                        field("compression", $.keyword_compression),
+                        optional(field("far", $.keyword_far)),
                       ),
                     ),
                   ),
@@ -358,10 +366,7 @@ module.exports = grammar({
 
     // ALIGN
     align_statement: ($) =>
-      seq(
-        $.keyword_align,
-        optional($.integer_literal), // value
-      ),
+      seq($.keyword_align, optional(field("value", $.integer_literal))),
 
     // UNGROUP
     ungroup_statement: ($) => $.keyword_ungroup,
