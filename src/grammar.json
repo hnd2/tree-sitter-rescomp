@@ -48,63 +48,63 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "palette_expression"
+          "name": "palette_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "bitmap_expression"
+          "name": "bitmap_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "tileset_expression"
+          "name": "tileset_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "tilemap_expression"
+          "name": "tilemap_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "map_expression"
+          "name": "map_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "objects_expression"
+          "name": "objects_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "image_expression"
+          "name": "image_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "sprite_expression"
+          "name": "sprite_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "xgm_expression"
+          "name": "xgm_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "xgm2_expression"
+          "name": "xgm2_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "wav_expression"
+          "name": "wav_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "bin_expression"
+          "name": "bin_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "align_expression"
+          "name": "align_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "ungroup_expression"
+          "name": "ungroup_statement"
         },
         {
           "type": "SYMBOL",
-          "name": "near_expression"
+          "name": "near_statement"
         }
       ]
     },
@@ -676,7 +676,7 @@
         ]
       }
     },
-    "palette_expression": {
+    "palette_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -693,7 +693,7 @@
         }
       ]
     },
-    "bitmap_expression": {
+    "bitmap_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -722,7 +722,7 @@
         }
       ]
     },
-    "tileset_expression": {
+    "tileset_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -802,7 +802,7 @@
         }
       ]
     },
-    "tilemap_expression": {
+    "tilemap_statement": {
       "type": "CHOICE",
       "members": [
         {
@@ -958,7 +958,7 @@
         }
       ]
     },
-    "map_expression": {
+    "map_statement": {
       "type": "CHOICE",
       "members": [
         {
@@ -1097,7 +1097,7 @@
         }
       ]
     },
-    "objects_expression": {
+    "objects_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -1163,7 +1163,7 @@
         }
       ]
     },
-    "image_expression": {
+    "image_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -1226,7 +1226,7 @@
         }
       ]
     },
-    "sprite_expression": {
+    "sprite_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -1348,7 +1348,7 @@
         }
       ]
     },
-    "xgm_expression": {
+    "xgm_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -1394,7 +1394,7 @@
         }
       ]
     },
-    "xgm2_expression": {
+    "xgm2_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -1414,7 +1414,7 @@
         }
       ]
     },
-    "wav_expression": {
+    "wav_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -1464,7 +1464,7 @@
         }
       ]
     },
-    "bin_expression": {
+    "bin_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -1561,7 +1561,7 @@
         }
       ]
     },
-    "align_expression": {
+    "align_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -1582,11 +1582,11 @@
         }
       ]
     },
-    "ungroup_expression": {
+    "ungroup_statement": {
       "type": "SYMBOL",
       "name": "keyword_ungroup"
     },
-    "near_expression": {
+    "near_statement": {
       "type": "SYMBOL",
       "name": "keyword_near"
     }

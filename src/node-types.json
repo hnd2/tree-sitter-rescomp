@@ -1,6 +1,6 @@
 [
   {
-    "type": "align_expression",
+    "type": "align_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -19,7 +19,7 @@
     }
   },
   {
-    "type": "bin_expression",
+    "type": "bin_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -54,7 +54,7 @@
     }
   },
   {
-    "type": "bitmap_expression",
+    "type": "bitmap_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -81,7 +81,7 @@
     }
   },
   {
-    "type": "image_expression",
+    "type": "image_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -156,7 +156,7 @@
     "fields": {}
   },
   {
-    "type": "map_expression",
+    "type": "map_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -191,7 +191,7 @@
     }
   },
   {
-    "type": "near_expression",
+    "type": "near_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -206,7 +206,7 @@
     }
   },
   {
-    "type": "objects_expression",
+    "type": "objects_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -233,7 +233,7 @@
     }
   },
   {
-    "type": "palette_expression",
+    "type": "palette_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -265,70 +265,70 @@
       "required": false,
       "types": [
         {
-          "type": "align_expression",
+          "type": "align_statement",
           "named": true
         },
         {
-          "type": "bin_expression",
+          "type": "bin_statement",
           "named": true
         },
         {
-          "type": "bitmap_expression",
+          "type": "bitmap_statement",
           "named": true
         },
         {
-          "type": "image_expression",
+          "type": "image_statement",
           "named": true
         },
         {
-          "type": "map_expression",
+          "type": "map_statement",
           "named": true
         },
         {
-          "type": "near_expression",
+          "type": "near_statement",
           "named": true
         },
         {
-          "type": "objects_expression",
+          "type": "objects_statement",
           "named": true
         },
         {
-          "type": "palette_expression",
+          "type": "palette_statement",
           "named": true
         },
         {
-          "type": "sprite_expression",
+          "type": "sprite_statement",
           "named": true
         },
         {
-          "type": "tilemap_expression",
+          "type": "tilemap_statement",
           "named": true
         },
         {
-          "type": "tileset_expression",
+          "type": "tileset_statement",
           "named": true
         },
         {
-          "type": "ungroup_expression",
+          "type": "ungroup_statement",
           "named": true
         },
         {
-          "type": "wav_expression",
+          "type": "wav_statement",
           "named": true
         },
         {
-          "type": "xgm2_expression",
+          "type": "xgm2_statement",
           "named": true
         },
         {
-          "type": "xgm_expression",
+          "type": "xgm_statement",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "sprite_expression",
+    "type": "sprite_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -407,7 +407,7 @@
     "fields": {}
   },
   {
-    "type": "tilemap_expression",
+    "type": "tilemap_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -446,7 +446,7 @@
     }
   },
   {
-    "type": "tileset_expression",
+    "type": "tileset_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -485,7 +485,7 @@
     }
   },
   {
-    "type": "ungroup_expression",
+    "type": "ungroup_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -500,7 +500,7 @@
     }
   },
   {
-    "type": "wav_expression",
+    "type": "wav_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -535,7 +535,7 @@
     }
   },
   {
-    "type": "xgm2_expression",
+    "type": "xgm2_statement",
     "named": true,
     "fields": {},
     "children": {
@@ -558,7 +558,7 @@
     }
   },
   {
-    "type": "xgm_expression",
+    "type": "xgm_statement",
     "named": true,
     "fields": {},
     "children": {

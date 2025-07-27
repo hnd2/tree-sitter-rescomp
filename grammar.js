@@ -15,21 +15,21 @@ module.exports = grammar({
     comment: (_) => token(choice(seq("#", /[^\r\n]*/), seq("//", /[^\r\n]*/))),
     _statement: ($) =>
       choice(
-        $.palette_expression,
-        $.bitmap_expression,
-        $.tileset_expression,
-        $.tilemap_expression,
-        $.map_expression,
-        $.objects_expression,
-        $.image_expression,
-        $.sprite_expression,
-        $.xgm_expression,
-        $.xgm2_expression,
-        $.wav_expression,
-        $.bin_expression,
-        $.align_expression,
-        $.ungroup_expression,
-        $.near_expression,
+        $.palette_statement,
+        $.bitmap_statement,
+        $.tileset_statement,
+        $.tilemap_statement,
+        $.map_statement,
+        $.objects_statement,
+        $.image_statement,
+        $.sprite_statement,
+        $.xgm_statement,
+        $.xgm2_statement,
+        $.wav_statement,
+        $.bin_statement,
+        $.align_statement,
+        $.ungroup_statement,
+        $.near_statement,
       ),
     identifier: (_) => token(/[a-zA-Z_][a-zA-Z0-9_]*/),
     string_literal: (_) => seq('"', repeat(choice(/[^"\\]/, /\\./)), '"'),
@@ -94,7 +94,7 @@ module.exports = grammar({
       token(choice("DEFAULT", "PCM", "DPCM2", "PCM4", "XGM", "XGM2")),
 
     // PALETTE
-    palette_expression: ($) =>
+    palette_statement: ($) =>
       seq(
         $.keyword_palette,
         $.identifier, // name
@@ -102,7 +102,7 @@ module.exports = grammar({
       ),
 
     // BITMAP
-    bitmap_expression: ($) =>
+    bitmap_statement: ($) =>
       seq(
         $.keyword_bitmap,
         $.identifier, // name
@@ -111,7 +111,7 @@ module.exports = grammar({
       ),
 
     // TILESET
-    tileset_expression: ($) =>
+    tileset_statement: ($) =>
       seq(
         $.keyword_tileset,
         $.identifier, // name
@@ -135,7 +135,7 @@ module.exports = grammar({
       ),
 
     // TILEMAP
-    tilemap_expression: ($) =>
+    tilemap_statement: ($) =>
       choice(
         seq(
           $.keyword_tilemap,
@@ -179,7 +179,7 @@ module.exports = grammar({
       ),
 
     // MAP
-    map_expression: ($) =>
+    map_statement: ($) =>
       choice(
         seq(
           $.keyword_map,
@@ -218,7 +218,7 @@ module.exports = grammar({
       ),
 
     // OBJECTS
-    objects_expression: ($) =>
+    objects_statement: ($) =>
       seq(
         $.keyword_objects,
         $.identifier, // name
@@ -235,7 +235,7 @@ module.exports = grammar({
       ),
 
     // IMAGE
-    image_expression: ($) =>
+    image_statement: ($) =>
       seq(
         $.keyword_image,
         $.identifier, // name
@@ -254,7 +254,7 @@ module.exports = grammar({
       ),
 
     // SPRITE
-    sprite_expression: ($) =>
+    sprite_statement: ($) =>
       seq(
         $.keyword_sprite,
         $.identifier, // name
@@ -290,7 +290,7 @@ module.exports = grammar({
       ),
 
     // XGM
-    xgm_expression: ($) =>
+    xgm_statement: ($) =>
       seq(
         $.keyword_xgm,
         $.identifier, // name
@@ -304,7 +304,7 @@ module.exports = grammar({
       ),
 
     // XGM2
-    xgm2_expression: ($) =>
+    xgm2_statement: ($) =>
       seq(
         $.keyword_xgm2,
         $.identifier, // name
@@ -313,7 +313,7 @@ module.exports = grammar({
       ),
 
     // WAV
-    wav_expression: ($) =>
+    wav_statement: ($) =>
       seq(
         $.keyword_wav,
         $.identifier, // name
@@ -328,7 +328,7 @@ module.exports = grammar({
       ),
 
     // BIN
-    bin_expression: ($) =>
+    bin_statement: ($) =>
       seq(
         $.keyword_bin,
         $.identifier, // name
@@ -357,17 +357,17 @@ module.exports = grammar({
       ),
 
     // ALIGN
-    align_expression: ($) =>
+    align_statement: ($) =>
       seq(
         $.keyword_align,
         optional($.integer_literal), // value
       ),
 
     // UNGROUP
-    ungroup_expression: ($) => $.keyword_ungroup,
+    ungroup_statement: ($) => $.keyword_ungroup,
 
     // NEAR
-    near_expression: ($) => $.keyword_near,
+    near_statement: ($) => $.keyword_near,
   },
 });
 
