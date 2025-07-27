@@ -2,15 +2,22 @@
   {
     "type": "align_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "integer_literal",
-          "named": true
-        },
         {
           "type": "keyword_align",
           "named": true
@@ -21,33 +28,84 @@
   {
     "type": "bin_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "align": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      },
+      "compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "far": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_far",
+            "named": true
+          }
+        ]
+      },
+      "file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "fill": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "size_align": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "integer_literal",
-          "named": true
-        },
-        {
           "type": "keyword_bin",
-          "named": true
-        },
-        {
-          "type": "keyword_compression",
-          "named": true
-        },
-        {
-          "type": "keyword_far",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -56,25 +114,44 @@
   {
     "type": "bitmap_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "img_file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "keyword_bitmap",
-          "named": true
-        },
-        {
-          "type": "keyword_compression",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -83,33 +160,64 @@
   {
     "type": "image_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "img_file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "map_base": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      },
+      "map_opt": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_optimization",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "integer_literal",
-          "named": true
-        },
-        {
-          "type": "keyword_compression",
-          "named": true
-        },
-        {
           "type": "keyword_image",
-          "named": true
-        },
-        {
-          "type": "keyword_optimization",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -158,33 +266,114 @@
   {
     "type": "map_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "img_file": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "layer_id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "map_base": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      },
+      "map_compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "ordering": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_ordering",
+            "named": true
+          }
+        ]
+      },
+      "tileset_id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "tmx_file": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "ts_compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "integer_literal",
-          "named": true
-        },
-        {
-          "type": "keyword_compression",
-          "named": true
-        },
-        {
           "type": "keyword_map",
-          "named": true
-        },
-        {
-          "type": "keyword_ordering",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -208,25 +397,84 @@
   {
     "type": "objects_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "decl_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "field_defs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "layer_id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "sortby": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "sortby_expression",
+            "named": true
+          }
+        ]
+      },
+      "tmx_file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "type_filter": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "keyword_objects",
-          "named": true
-        },
-        {
-          "type": "sortby_expression",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -235,21 +483,34 @@
   {
     "type": "palette_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "keyword_palette",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -286,6 +547,10 @@
         },
         {
           "type": "near_statement",
+          "named": true
+        },
+        {
+          "type": "newline",
           "named": true
         },
         {
@@ -330,49 +595,114 @@
   {
     "type": "sprite_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "collision": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_collision",
+            "named": true
+          }
+        ]
+      },
+      "compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "height": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      },
+      "img_file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "opt_duplicate": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_sprite_optimization_duplicate",
+            "named": true
+          }
+        ]
+      },
+      "opt_level": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_sprite_optimization_level",
+            "named": true
+          }
+        ]
+      },
+      "opt_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_sprite_optimization_type",
+            "named": true
+          }
+        ]
+      },
+      "time": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "sprite_time_expression",
+            "named": true
+          }
+        ]
+      },
+      "width": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "integer_literal",
-          "named": true
-        },
-        {
-          "type": "keyword_collision",
-          "named": true
-        },
-        {
-          "type": "keyword_compression",
-          "named": true
-        },
-        {
           "type": "keyword_sprite",
-          "named": true
-        },
-        {
-          "type": "keyword_sprite_optimization_duplicate",
-          "named": true
-        },
-        {
-          "type": "keyword_sprite_optimization_level",
-          "named": true
-        },
-        {
-          "type": "keyword_sprite_optimization_type",
-          "named": true
-        },
-        {
-          "type": "sprite_time_expression",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -409,37 +739,124 @@
   {
     "type": "tilemap_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "img_file": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "layer_id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "map_base": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      },
+      "map_compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "map_opt": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_optimization",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "ordering": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_ordering",
+            "named": true
+          }
+        ]
+      },
+      "tileset_id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "tmx_file": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "ts_compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "integer_literal",
-          "named": true
-        },
-        {
-          "type": "keyword_compression",
-          "named": true
-        },
-        {
-          "type": "keyword_optimization",
-          "named": true
-        },
-        {
-          "type": "keyword_ordering",
-          "named": true
-        },
-        {
           "type": "keyword_tilemap",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -448,37 +865,74 @@
   {
     "type": "tileset_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "compression": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_compression",
+            "named": true
+          }
+        ]
+      },
+      "export": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_export",
+            "named": true
+          }
+        ]
+      },
+      "file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "opt": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_optimization",
+            "named": true
+          }
+        ]
+      },
+      "ordering": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_ordering",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "keyword_compression",
-          "named": true
-        },
-        {
-          "type": "keyword_export",
-          "named": true
-        },
-        {
-          "type": "keyword_optimization",
-          "named": true
-        },
-        {
-          "type": "keyword_ordering",
-          "named": true
-        },
-        {
           "type": "keyword_tileset",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -502,33 +956,64 @@
   {
     "type": "wav_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "driver": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "keyword_wav_driver",
+            "named": true
+          }
+        ]
+      },
+      "far": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_far",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "out_rate": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer_literal",
+            "named": true
+          }
+        ]
+      },
+      "wav_file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "integer_literal",
-          "named": true
-        },
-        {
-          "type": "keyword_far",
-          "named": true
-        },
-        {
           "type": "keyword_wav",
-          "named": true
-        },
-        {
-          "type": "keyword_wav_driver",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -537,21 +1022,34 @@
   {
     "type": "xgm2_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "file": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "keyword_xgm2",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -560,25 +1058,54 @@
   {
     "type": "xgm_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "file": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      },
+      "timing": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "keyword_xgm_timing",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "keyword_xgm",
-          "named": true
-        },
-        {
-          "type": "keyword_xgm_timing",
-          "named": true
-        },
-        {
-          "type": "string_literal",
           "named": true
         }
       ]
@@ -707,6 +1234,10 @@
   },
   {
     "type": "keyword_xgm_timing",
+    "named": true
+  },
+  {
+    "type": "newline",
     "named": true
   },
   {
