@@ -18,6 +18,8 @@ module.exports = grammar({
 
     _statement: ($) =>
       choice(
+        $._newline,
+        $.comment,
         $.palette_statement,
         $.bitmap_statement,
         $.tileset_statement,

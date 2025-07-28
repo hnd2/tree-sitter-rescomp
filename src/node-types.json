@@ -538,6 +538,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "image_statement",
           "named": true
         },
