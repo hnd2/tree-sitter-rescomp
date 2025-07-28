@@ -12,7 +12,8 @@ module.exports = grammar({
   extras: ($) => [$.comment, /[ \t]/],
   conflicts: ($) => [[$.tilemap_statement], [$.map_statement]],
   rules: {
-    source_file: ($) => repeat($._statement),
+    source_file: ($) =>
+      seq(repeat(seq($._statement, $._newline)), optional($._statement)),
     comment: (_) => token(choice(seq("#", /[^\r\n]*/), seq("//", /[^\r\n]*/))),
     _newline: (_) => /\r?\n/,
 
@@ -106,7 +107,6 @@ module.exports = grammar({
         $.keyword_palette,
         field("name", $.identifier),
         field("file", $.string_literal),
-        $._newline,
       ),
 
     // BITMAP
@@ -116,7 +116,6 @@ module.exports = grammar({
         field("name", $.identifier),
         field("img_file", $.string_literal),
         field("compression", optional($.keyword_compression)),
-        $._newline,
       ),
 
     // TILESET
@@ -141,7 +140,6 @@ module.exports = grammar({
             ),
           ),
         ),
-        $._newline,
       ),
 
     // TILEMAP
@@ -187,7 +185,6 @@ module.exports = grammar({
             ),
           ),
         ),
-        $._newline,
       ),
 
     // MAP
@@ -228,7 +225,6 @@ module.exports = grammar({
             ),
           ),
         ),
-        $._newline,
       ),
 
     // OBJECTS
@@ -246,7 +242,6 @@ module.exports = grammar({
             optional(field("type_filter", $.string_literal)),
           ),
         ),
-        $._newline,
       ),
 
     // IMAGE
@@ -266,7 +261,6 @@ module.exports = grammar({
             ),
           ),
         ),
-        $._newline,
       ),
 
     // SPRITE
@@ -311,7 +305,6 @@ module.exports = grammar({
             ),
           ),
         ),
-        $._newline,
       ),
 
     // XGM
@@ -326,7 +319,6 @@ module.exports = grammar({
             optional(field("options", $.string_literal)),
           ),
         ),
-        $._newline,
       ),
 
     // XGM2
@@ -336,7 +328,6 @@ module.exports = grammar({
         field("name", $.identifier),
         repeat1(field("file", $.string_literal)),
         // optional(field("options", $.string_literal)),
-        $._newline,
       ),
 
     // WAV
@@ -352,7 +343,6 @@ module.exports = grammar({
             optional(field("far", $.keyword_far)),
           ),
         ),
-        $._newline,
       ),
 
     // BIN
@@ -382,22 +372,17 @@ module.exports = grammar({
             ),
           ),
         ),
-        $._newline,
       ),
 
     // ALIGN
     align_statement: ($) =>
-      seq(
-        $.keyword_align,
-        optional(field("value", $.integer_literal)),
-        $._newline,
-      ),
+      seq($.keyword_align, optional(field("value", $.integer_literal))),
 
     // UNGROUP
-    ungroup_statement: ($) => seq($.keyword_ungroup, $._newline),
+    ungroup_statement: ($) => $.keyword_ungroup,
 
     // NEAR
-    near_statement: ($) => seq($.keyword_near, $._newline),
+    near_statement: ($) => $.keyword_near,
   },
 });
 
