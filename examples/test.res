@@ -4,6 +4,8 @@ OBJECTS name "file_path" "layer_id" "type:u16;name:string;x:f32;y:f32;tileindex:
 
 PALETTE name "bar"
 
+
+
 SPRITE name "file_path" 16 16
 SPRITE name "file_path" 16 16
 IMAGE name "file_path"
