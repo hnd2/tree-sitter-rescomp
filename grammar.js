@@ -37,7 +37,8 @@ module.exports = grammar({
         $.near_statement,
       ),
     identifier: (_) => token(/[a-zA-Z_][a-zA-Z0-9_]*/),
-    string_literal: (_) => seq('"', repeat(choice(/[^"\\]/, /\\./)), '"'),
+    string_literal: (_) =>
+      token(seq('"', repeat(choice(/[^"\\]/, /\\./)), '"')),
     integer_literal: (_) => token(choice(/[1-9][0-9_]*/, /0/)),
     integer_array_literal: ($) => seq("[", commaSep1($.integer_literal), "]"),
     integer_array2d_literal: ($) =>

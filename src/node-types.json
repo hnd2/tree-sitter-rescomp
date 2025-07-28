@@ -747,11 +747,6 @@
     }
   },
   {
-    "type": "string_literal",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "tilemap_statement",
     "named": true,
     "fields": {
@@ -1127,10 +1122,6 @@
     }
   },
   {
-    "type": "\"",
-    "named": false
-  },
-  {
     "type": ",",
     "named": false
   },
@@ -1269,6 +1260,10 @@
   },
   {
     "type": "sortby_expression",
+    "named": true
+  },
+  {
+    "type": "string_literal",
     "named": true
   }
 ]
