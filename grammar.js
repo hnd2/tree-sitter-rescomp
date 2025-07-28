@@ -144,89 +144,89 @@ module.exports = grammar({
 
     // TILEMAP
     tilemap_statement: ($) =>
-      choice(
-        seq(
-          $.keyword_tilemap,
-          field("name", $.identifier),
-          field("img_file", $.string_literal),
-          field("tileset_id", $.string_literal),
-          optional(
-            seq(
-              field("compression", $.keyword_compression),
-              optional(
-                seq(
-                  field("map_opt", $.keyword_optimization),
-                  optional(
-                    seq(
-                      field("map_base", $.integer_literal),
-                      optional(field("ordering", $.keyword_ordering)),
+      seq(
+        $.keyword_tilemap,
+        choice(
+          seq(
+            field("name", $.identifier),
+            field("img_file", $.string_literal),
+            field("tileset_id", $.string_literal),
+            optional(
+              seq(
+                field("compression", $.keyword_compression),
+                optional(
+                  seq(
+                    field("map_opt", $.keyword_optimization),
+                    optional(
+                      seq(
+                        field("map_base", $.integer_literal),
+                        optional(field("ordering", $.keyword_ordering)),
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
           ),
-          $._newline,
-        ),
-        seq(
-          $.keyword_tilemap,
-          field("name", $.identifier),
-          field("tmx_file", $.string_literal),
-          field("layer_id", $.string_literal),
-          optional(
-            seq(
-              field("ts_compression", $.keyword_compression),
-              optional(
-                seq(
-                  field("map_compression", $.keyword_compression),
-                  optional(field("map_base", $.integer_literal)),
+          seq(
+            field("name", $.identifier),
+            field("tmx_file", $.string_literal),
+            field("layer_id", $.string_literal),
+            optional(
+              seq(
+                field("ts_compression", $.keyword_compression),
+                optional(
+                  seq(
+                    field("map_compression", $.keyword_compression),
+                    optional(field("map_base", $.integer_literal)),
+                  ),
                 ),
               ),
             ),
           ),
-          $._newline,
         ),
+        $._newline,
       ),
 
     // MAP
     map_statement: ($) =>
-      choice(
-        seq(
-          $.keyword_map,
-          field("name", $.identifier),
-          field("img_file", $.string_literal),
-          field("tileset_id", $.string_literal),
-          optional(
-            seq(
-              field("compression", $.keyword_compression),
-              optional(field("map_base", $.integer_literal)),
+      seq(
+        $.keyword_map,
+        choice(
+          seq(
+            field("name", $.identifier),
+            field("img_file", $.string_literal),
+            field("tileset_id", $.string_literal),
+            optional(
+              seq(
+                field("compression", $.keyword_compression),
+                optional(field("map_base", $.integer_literal)),
+              ),
             ),
           ),
-          $._newline,
-        ),
-        seq(
-          $.keyword_map,
-          field("name", $.identifier),
-          field("tmx_file", $.string_literal),
-          field("layer_id", $.string_literal),
-          optional(
-            seq(
-              field("ts_compression", $.keyword_compression),
-              optional(
-                seq(
-                  field("map_compression", $.keyword_compression),
-                  optional(
-                    seq(
-                      field("map_base", $.integer_literal),
-                      optional(field("ordering", $.keyword_ordering)),
+          seq(
+            field("name", $.identifier),
+            field("tmx_file", $.string_literal),
+            field("layer_id", $.string_literal),
+            optional(
+              seq(
+                field("ts_compression", $.keyword_compression),
+                optional(
+                  seq(
+                    field("map_compression", $.keyword_compression),
+                    optional(
+                      seq(
+                        field("map_base", $.integer_literal),
+                        optional(field("ordering", $.keyword_ordering)),
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
           ),
-          $._newline,
         ),
+        $._newline,
       ),
 
     // OBJECTS
