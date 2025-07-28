@@ -13,13 +13,15 @@ module.exports = grammar({
   conflicts: ($) => [[$.tilemap_statement], [$.map_statement]],
   rules: {
     source_file: ($) =>
-      seq(repeat(seq($._statement, $._newline)), optional($._statement)),
+      seq(
+        repeat(choice(seq($._statement, $._newline), $._newline)),
+        optional($._statement),
+      ),
     comment: (_) => token(choice(seq("#", /[^\r\n]*/), seq("//", /[^\r\n]*/))),
     _newline: (_) => /\r?\n/,
 
     _statement: ($) =>
       choice(
-        $._newline,
         $.comment,
         $.palette_statement,
         $.bitmap_statement,
